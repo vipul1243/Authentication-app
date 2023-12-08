@@ -1,0 +1,100 @@
+.glass {
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px #4747470b;
+  backdrop-filter: blur(7.1px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  @apply border-4 border-gray-50 shrink-0 h-auto w-[30%] rounded-3xl py-20 px-7 min-w-max;
+}
+
+.profile_img {
+  @apply border-4 border-gray-100 w-[135px] rounded-full shadow-lg cursor-pointer;
+  @apply hover:border-gray-200;
+}
+
+.textbox {
+  @apply border-0 px-5 py-4 rounded-xl w-3/4 shadow-sm text-lg;
+  @apply focus:outline-none;
+}
+
+.btn {
+  @apply border bg-indigo-500 w-3/4 py-4 rounded-lg text-gray-50 text-xl shadow-sm text-center;
+}
+
+.btn:hover {
+  background-color: #ff6a6a;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+
+/* .glass */
+/* .glass {
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px #4747470b;
+  backdrop-filter: blur(7.1px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-width: 4px;
+  border-color: #f9fafb;
+  flex-shrink: 0;
+  height: auto;
+  width: 30%;
+  border-radius: 1.5rem;
+  padding-top: 5rem;
+  padding-right: 1.75rem;
+  padding-bottom: 5rem;
+  padding-left: 1.75rem;
+  min-width: max-content;
+} */
+
+/* .profile_img */
+/* .profile_img {
+  border-width: 4px;
+  border-color: #f1f1f1;
+  width: 135px;
+  border-radius: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+} */
+
+/* .profile_img:hover {
+  border-color: #e2e8f0;
+} */
+
+/* .textbox */
+/* .textbox {
+  border: 0;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0.75rem;
+  width: 75%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-size: 1.125rem;
+  outline: none;
+} */
+
+/* .btn */
+/* .btn {
+  border: none;
+  background-color: #4f46e5;
+  width: 75%;
+  padding-top: 1rem;
+  border-radius: 1rem;
+  color: #fff;
+  font-size: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #ff6a6a;
+}
+
+input[type="file"] {
+  display: none;
+} */

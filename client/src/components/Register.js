@@ -25,7 +25,6 @@ export default function Register() {
     validateOnChange: false,
     onSubmit: async (values) => {
       values = await Object.assign(values, { profile: file || "" });
-      // console.log(values);
 
       const formData = new FormData();
       formData.append("profile", image);

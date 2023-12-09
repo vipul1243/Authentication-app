@@ -34,12 +34,12 @@ export async function getUser({ username }) {
 /** register user function */
 export async function registerUser(credentials, values) {
   try {
-    const {
-      data,
-      status,
-    } = await axios.post(`/api/v1/user/register`, credentials);
+    const { data, status } = await axios.post(
+      `/api/v1/user/register`,
+      credentials
+    );
 
-    if(!data.success) {
+    if (!data.success) {
       return Promise.reject({ message: data.message });
     }
 
@@ -68,7 +68,7 @@ export async function verifyPassword({ username, password }) {
         username,
         password,
       });
-      if(!data.success) {
+      if (!data.success) {
         return Promise.reject({ message: data.message });
       }
       return Promise.resolve({ data });
@@ -102,9 +102,7 @@ export async function generateOTP(username) {
 
     // send mail with the OTP
     if (status === 201) {
-      let {
-        data,
-      } = await getUser({ username });
+      let { data } = await getUser({ username });
       let text = `Your Password Recovery OTP is ${code}. Verify and recover your password.`;
       await axios.post("/api/v1/user/registerMail", {
         username,
@@ -143,3 +141,30 @@ export async function resetPassword({ username, password }) {
     return Promise.reject({ error });
   }
 }
+
+/** Get Current IP */
+export async function getCurrentIPAddress() {
+  try {
+    const { data } = await axios.get("https://api.ipify.org?format=json");
+    return Promise.resolve(data.ip);
+  } catch (error) {
+    return Promise.reject(error);
+  }
+}
+
+// export async function getCurrentData(ip) {
+//   try {
+//     const res = await axios.get(`https://ipinfo.io/${ip}/geo`);
+//     return Promise.resolve(res.data);
+//   } catch (error) {
+//     if (error.response && error.response.status === 429) {
+//       console.log("Rate limited. Retrying after some time...");
+//       // Implement exponential backoff, e.g., wait for 1 second and then retry
+//       await new Promise((resolve) => setTimeout(resolve, 1000));
+//       return getCurrentData(ip); // Retry the request
+//     } else {
+//       console.error("Error fetching Geo Data:", error);
+//       return Promise.reject(error);
+//     }
+//   }
+// }

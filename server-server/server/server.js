@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 const connectionDB = require("./database/dbConnection");
 const helmet = require("helmet");
 const userRoute = require("./routes/userRoute");
+const bookRoute = require("./routes/bookRoute");
 
 const app = express();
 
@@ -23,6 +24,7 @@ const PORT = process.env.PORT || 9000;
 connectionDB();
 
 app.use("/api/v1/user", userRoute);
+app.use("/api/v1/book", bookRoute);
 
 
 const dirname = path.resolve();

@@ -23,7 +23,6 @@ export default function Password() {
     validateOnBlur: false,
     validateOnChange: false,
     onSubmit: async (values) => {
-      // console.log(values);
       let loginPromise = verifyPassword({
         username,
         password: values.password,

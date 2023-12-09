@@ -51,13 +51,12 @@ export default function Profile() {
   });
 
   useEffect(() => {
-    if(!file && !apiData) {
+    if (!file && !apiData) {
       setUrl(avatar);
     }
-    if(!file && apiData?.profile) {
-      setUrl(`http://localhost:8080/api/public/${apiData?.profile}`)
-    }
-    else {
+    if (!file && apiData?.profile) {
+      setUrl(`http://localhost:8080/api/public/${apiData?.profile}`);
+    } else {
       setUrl(avatar);
     }
   }, [apiData, file]);
@@ -77,7 +76,6 @@ export default function Profile() {
   if (isLoading) return <h1 className="text-2xl font-bold">isLoading</h1>;
   if (serverError)
     return <h1 className="text-xl text-red-500">{serverError.message}</h1>;
-
 
   return (
     <div className="container mx-auto">
@@ -152,12 +150,19 @@ export default function Profile() {
               <button className={styles.btn} type="submit">
                 Update
               </button>
+              <button className={styles.btn} onClick={() => {navigate("/home")}}>
+                Home
+              </button>
             </div>
           </form>
+
           <div className="text-center py-4">
             <span className="text-gray-500">
               come back later?{" "}
-              <button onClick={userLogout} className="text-red-500 hover:underline">
+              <button
+                onClick={userLogout}
+                className="text-red-500 hover:underline"
+              >
                 Logout
               </button>
             </span>
